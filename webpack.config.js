@@ -1,4 +1,4 @@
-    const path = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
 
@@ -22,6 +22,10 @@ module.exports = (env) => {
             path: path.resolve(__dirname, 'build'),
             filename: 'app.bundle.js'
         },
+        devServer: {
+            contentBase: './build',
+            hot: true
+          },
     module: {
       rules: [
         {
